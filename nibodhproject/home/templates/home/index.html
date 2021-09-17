@@ -1,0 +1,101 @@
+{% extends "home\basic.html" %}
+
+{% block title %}
+Home
+{% endblock title %}
+
+{% block css %}
+
+{% endblock css %}
+
+{% block body %}
+
+{% if messages %}
+<ul class="messages list-unstyled">
+    {% for message in messages %}
+    <li {% if message.tags %}>
+
+      <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong> {{ message }} </strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+{% endif %}
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<main role="main">
+
+<body style="font-family: Times New Roman; background-color: #ffd6d6"  >
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <!--<div class="jumbotron" style="font-family: Times New Roman; background-color:  #ffd6d6"> -->
+      <div class="container">
+        <h1 class="display-3">SubmitUpProject ! 
+
+          {% if user.is_authenticated  %}
+        Welcome {{request.user.first_name}}
+          {% endif %}
+
+        </h1>
+         <p><strong><center>Bring all your learning tools,assignments and multiple projects in one central destination.</center></p> 
+         <p><strong><center>Making online submission easier.</center></p> 
+         <p><strong><center> Professor in your school or college community can easily check your projects in minutes.</center></p> 
+        <p><strong><center> Access your projects anywhere, on any device, and give your class more flexibility and mobility.</center></strong> </p>
+    
+
+      </div>
+    </div>
+
+    <div class="container" style="font-family: Times New Roman; background-color: #ffeded">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2 style="font-family: Times New Roman; color:red">Save time and simplify everyday tasks</h2>
+         
+          <p>Track students progress and submission status.Upload coursework documents automatically as templates to give each student their own copy of an assignment when it is created.Our easy-to-use and secure tool helps you store all your projects in one place.  </p>
+         
+        </div>
+
+
+        <div class="col-md-4">
+          <h2 style="font-family: Times New Roman; color:red">Stay secure and compliant</h2>
+          </br>
+          <p>Rely on our global network built with multilayered, full-stack security that can handle extreme shifts in demand, and a guaranteed 99.9% uptime.100% ad-free, plus students’ personal information will not be used to create ad profiles for targeting</p>
+         
+        </div>
+
+
+        <div class="col-md-4">
+          <h2 style="font-family: Times New Roman; color:red">Guide to use</h2>
+         
+          <p><b>
+          <h6>For details:</h6>
+          <p>Get our complete details on home tab</p>
+         
+          <h6><b>To create and submit project:</b></h6>
+          <p>Click on project tab and submit all your oroject details.</p>
+         
+
+          <h6><b>To contact or for any inquiries:</b></h6>
+          <p>Go to our contact us tab .</p>
+          
+          
+          </p>
+          
+        </div>
+      </div>
+
+      <hr>
+
+    </div> <!-- /container -->
+
+  </main>
+
+  <footer class="container">
+    <p style="font-family: Times New Roman; color:red">&copy; Company 2018-2019</p>
+  </footer>
+
+
+{% endblock body %}
